@@ -105,12 +105,12 @@
 	}
 
 	#gsu {
-		color: #82a5e6;
+		color: #6A90AF;
 	}
 
 
 	#uma {
-		color: rgb(252, 219, 110);
+		color: rgb(204, 111, 111);
 	}
 
 /* List */
@@ -204,7 +204,7 @@
 
 	#header {
 		position: relative;
-		background: #d64760 url("images/overlay.png");
+		background-image: url("../../images/thumbs/00-map.jpg");
 		color: #fff;
 		cursor: default;
 	}
