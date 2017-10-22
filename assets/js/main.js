@@ -624,6 +624,8 @@ var parallelism = (function($) { var _ = {
 						
 						//map popup
 						$('.map').magnificPopup({
+							removalDelay: 300,
+							mainClass: 'mfp-fade',
 							type: 'iframe',
 												
 							iframe: {

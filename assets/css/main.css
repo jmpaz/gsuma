@@ -204,7 +204,8 @@
 
 	#header {
 		position: relative;
-		background-image: url("../../images/thumbs/00-map.jpg");
+		background-image: url("../../images/thumbs/00-map.jpg") !important; 
+															 /* ^ todo: get mobile its own bg */
 		color: #fff;
 		cursor: default;
 	}
@@ -362,7 +363,42 @@
 						padding-left: 0;
 					}
 
-		/* Popup */
+		/* magnific-popup */
+					
+			.mfp-fade.mfp-bg {
+			  opacity: 0;
+			
+			  -webkit-transition: all 0.15s ease-out;
+			  -moz-transition: all 0.15s ease-out;
+			  transition: all 0.15s ease-out;
+			}
+			/* overlay animate in */
+			.mfp-fade.mfp-bg.mfp-ready {
+			  opacity: 0.8;
+			}
+			/* overlay animate out */
+			.mfp-fade.mfp-bg.mfp-removing {
+			  opacity: 0;
+			}
+
+			/* content at start */
+			.mfp-fade.mfp-wrap .mfp-content {
+			  opacity: 0;
+			
+			  -webkit-transition: all 0.15s ease-out;
+			  -moz-transition: all 0.15s ease-out;
+			  transition: all 0.15s ease-out;
+			}
+			/* content animate it */
+			.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+			  opacity: 1;
+			}
+			/* content animate out */
+			.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+			  opacity: 0;
+			}
+
+		/* Poptrox */
 
 			.poptrox-popup {
 				background: #1a1f2c;
