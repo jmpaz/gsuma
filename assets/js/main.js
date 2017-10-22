@@ -610,6 +610,15 @@ var parallelism = (function($) { var _ = {
 										location.reload(true);
 									}, 50);
 								});
+							
+							// https://stackoverflow.com/a/38372749
+							$(window).on('hashchange',function() {
+								
+								if(location.href.indexOf("#map")<0) {
+									$.magnificPopup.close(); 
+								}
+								
+							});
 
 						});
 						

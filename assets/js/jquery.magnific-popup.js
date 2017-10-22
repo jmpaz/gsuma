@@ -155,6 +155,9 @@ MagnificPopup.prototype = {
 	 */
 	open: function(data) {
 
+		// https://stackoverflow.com/a/38372749
+		location.href = location.href.split('#')[0] + "#map";
+
 		var i;
 
 		if(data.isObj === false) { 
@@ -385,6 +388,9 @@ MagnificPopup.prototype = {
 	 * Closes the popup
 	 */
 	close: function() {
+
+		if (location.hash) history.go(-1);
+
 		if(!mfp.isOpen) return;
 		_mfpTrigger(BEFORE_CLOSE_EVENT);
 
