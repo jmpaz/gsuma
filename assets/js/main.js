@@ -458,7 +458,7 @@ var parallelism = (function($) { var _ = {
 						if (_.settings.useScrollKeys) {
 
 							_.objects.window.keydown(function(e) {
-								if ($('.poptrox-popup').is(':visible'))
+								if ($('.mfp-img').is(':visible'))
 									return;
 
 								switch (e.keyCode)
@@ -483,19 +483,19 @@ var parallelism = (function($) { var _ = {
 						}
 
 				// Poptrox.
-					_.objects.reel.poptrox({
-						onPopupClose: (_.settings.useBlurFilter ? (function() { _.objects.wrapper.removeClass('overlayed'); }) : null),
-						onPopupOpen: (_.settings.useBlurFilter ? (function() { _.objects.wrapper.addClass('overlayed'); }) : null),
-						overlayColor: _.settings.popupOverlayColor,
-						overlayOpacity: _.settings.popupOverlayOpacity,
-						popupCloserText: '',
-						popupLoaderText: '',
-						selector: '.thumb a.image',
-						usePopupCaption: true,
-						usePopupCloser: false,
-						usePopupDefaultStyling: false,
-						usePopupNav: true
-					});
+					// _.objects.reel.poptrox({
+					// 	onPopupClose: (_.settings.useBlurFilter ? (function() { _.objects.wrapper.removeClass('overlayed'); }) : null),
+					// 	onPopupOpen: (_.settings.useBlurFilter ? (function() { _.objects.wrapper.addClass('overlayed'); }) : null),
+					// 	overlayColor: _.settings.popupOverlayColor,
+					// 	overlayOpacity: _.settings.popupOverlayOpacity,
+					// 	popupCloserText: '',
+					// 	popupLoaderText: '',
+					// 	selector: '.thumb a.image',
+					// 	usePopupCaption: true,
+					// 	usePopupCloser: false,
+					// 	usePopupDefaultStyling: false,
+					// 	usePopupNav: true
+					// });
 
 				// Trigger resize event.
 					_.objects.window.trigger('resize');
@@ -536,21 +536,21 @@ var parallelism = (function($) { var _ = {
 					});
 
 				// Poptrox.
-					_.objects.reel.poptrox({
-						onPopupClose: (_.settings.useBlurFilter ? (function() { _.objects.wrapper.removeClass('overlayed'); }) : null),
-						onPopupOpen: (_.settings.useBlurFilter ? (function() { _.objects.wrapper.addClass('overlayed'); }) : null),
-						overlayColor: _.settings.popupOverlayColor,
-						overlayOpacity: _.settings.popupOverlayOpacity,
-						popupSpeed: 0,
-						selector: '.thumb a.image',
-						useBodyOverflow: false,
-						usePopupCaption: false,
-						usePopupCloser: false,
-						usePopupDefaultStyling: false,
-						usePopupLoader: false,
-						usePopupNav: false,
-						windowMargin: 0
-					});
+					// _.objects.reel.poptrox({
+					// 	onPopupClose: (_.settings.useBlurFilter ? (function() { _.objects.wrapper.removeClass('overlayed'); }) : null),
+					// 	onPopupOpen: (_.settings.useBlurFilter ? (function() { _.objects.wrapper.addClass('overlayed'); }) : null),
+					// 	overlayColor: _.settings.popupOverlayColor,
+					// 	overlayOpacity: _.settings.popupOverlayOpacity,
+					// 	popupSpeed: 0,
+					// 	selector: '.thumb a.image',
+					// 	useBodyOverflow: false,
+					// 	usePopupCaption: false,
+					// 	usePopupCloser: false,
+					// 	usePopupDefaultStyling: false,
+					// 	usePopupLoader: false,
+					// 	usePopupNav: false,
+					// 	windowMargin: 0
+					// });
 
 			},
 
@@ -614,37 +614,56 @@ var parallelism = (function($) { var _ = {
 							// https://stackoverflow.com/a/38372749
 							$(window).on('hashchange',function() {
 								
-								if(location.href.indexOf("#map")<0) {
+								if(location.href.indexOf("#view")<0) {
 									$.magnificPopup.close(); 
 								}
 								
 							});
 
 						});
+
 						
 						//map popup
 						$('.map').magnificPopup({
 							removalDelay: 300,
 							mainClass: 'mfp-fade',
 							type: 'iframe',
-												
 							iframe: {
-							   markup: '<div class="mfp-iframe-scaler">'+
-										  '<div class="mfp-close"></div>'+
-										  '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
-										'</div>'
+								markup: '<div class="mfp-iframe-scaler">'+
+								'<div class="mfp-close"></div>'+
+								'<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
+								'</div>'
 							},
 							callbacks: {
-							  markupParse: function(template, values, item) {
-							   values.title = item.el.attr('title');
-							  }
+								markupParse: function(template, values, item) {
+									values.title = item.el.attr('title');
+								}
 							}
 						});
-
-				});
-
-			}
-
-}; return _; })(jQuery);
-
-parallelism.init();
+						
+						//image popup
+						$('.popup-img').magnificPopup({
+							gallery:{
+							  enabled:true
+							},
+							delegate: 'a',
+							type: 'image',
+							removalDelay: 300, //delay removal by X to allow out-animation
+							callbacks: {
+								beforeOpen: function() {
+									// just a hack that adds mfp-anim class to markup 
+									this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+									this.st.mainClass = this.st.el.attr('data-effect');
+								}
+							},
+							closeOnContentClick: true,
+							midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+						});
+						
+					});
+					
+				}
+				
+			}; return _; })(jQuery);
+			
+			parallelism.init();

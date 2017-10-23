@@ -156,7 +156,7 @@ MagnificPopup.prototype = {
 	open: function(data) {
 
 		// https://stackoverflow.com/a/38372749
-		location.href = location.href.split('#')[0] + "#map";
+		location.href = location.href.split('#')[0] + "#view";
 
 		var i;
 
