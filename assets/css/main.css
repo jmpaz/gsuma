@@ -204,8 +204,8 @@
 
 	#header {
 		position: relative;
-		background-image: url("../../images/thumbs/00-map.jpg") !important; 
-															 /* ^ todo: get mobile its own bg */
+		background-image: url("../../images/thumbs/00-atabal.jpg") !important;
+		background-size: 100%;									/* ^ todo: get different mobile/desktop BGs */
 		color: #fff;
 		cursor: default;
 	}
