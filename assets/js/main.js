@@ -482,21 +482,6 @@ var parallelism = (function($) { var _ = {
 
 						}
 
-				// Poptrox.
-					// _.objects.reel.poptrox({
-					// 	onPopupClose: (_.settings.useBlurFilter ? (function() { _.objects.wrapper.removeClass('overlayed'); }) : null),
-					// 	onPopupOpen: (_.settings.useBlurFilter ? (function() { _.objects.wrapper.addClass('overlayed'); }) : null),
-					// 	overlayColor: _.settings.popupOverlayColor,
-					// 	overlayOpacity: _.settings.popupOverlayOpacity,
-					// 	popupCloserText: '',
-					// 	popupLoaderText: '',
-					// 	selector: '.thumb a.image',
-					// 	usePopupCaption: true,
-					// 	usePopupCloser: false,
-					// 	usePopupDefaultStyling: false,
-					// 	usePopupNav: true
-					// });
-
 				// Trigger resize event.
 					_.objects.window.trigger('resize');
 
@@ -534,23 +519,6 @@ var parallelism = (function($) { var _ = {
 
 
 					});
-
-				// Poptrox.
-					// _.objects.reel.poptrox({
-					// 	onPopupClose: (_.settings.useBlurFilter ? (function() { _.objects.wrapper.removeClass('overlayed'); }) : null),
-					// 	onPopupOpen: (_.settings.useBlurFilter ? (function() { _.objects.wrapper.addClass('overlayed'); }) : null),
-					// 	overlayColor: _.settings.popupOverlayColor,
-					// 	overlayOpacity: _.settings.popupOverlayOpacity,
-					// 	popupSpeed: 0,
-					// 	selector: '.thumb a.image',
-					// 	useBodyOverflow: false,
-					// 	usePopupCaption: false,
-					// 	usePopupCloser: false,
-					// 	usePopupDefaultStyling: false,
-					// 	usePopupLoader: false,
-					// 	usePopupNav: false,
-					// 	windowMargin: 0
-					// });
 
 			},
 
@@ -622,8 +590,6 @@ var parallelism = (function($) { var _ = {
 
 						});
 
-						
-						//map popup
 						$('.map').magnificPopup({
 							removalDelay: 300,
 							mainClass: 'mfp-fade',
@@ -644,7 +610,9 @@ var parallelism = (function($) { var _ = {
 						//image popup
 						$('.popup-img').magnificPopup({
 							gallery:{
-							  enabled:true
+							  enabled:true,
+							  preload: [1,2],
+							  navigateByImgClick: false
 							},
 							delegate: 'a',
 							type: 'image',
