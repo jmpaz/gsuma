@@ -609,8 +609,8 @@ var parallelism = (function($) { var _ = {
 						
 						//image popup
 						$('.popup-img').magnificPopup({
-							gallery:{
-							  enabled:true,
+							gallery: {
+							  enabled: true,
 							  preload: [1,2],
 							  navigateByImgClick: false
 							},
@@ -626,6 +626,22 @@ var parallelism = (function($) { var _ = {
 							},
 							closeOnContentClick: true,
 							midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+						});
+
+						// youtube popup
+						$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+							gallery: {
+								enabled: true,
+								preload: [1,2],
+								navigateByImgClick: false
+							  },
+							disableOn: 700,
+							type: 'iframe',
+							mainClass: 'mfp-fade',
+							removalDelay: 160,
+							preloader: false,
+					
+							fixedContentPos: false
 						});
 						
 					});
