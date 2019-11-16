@@ -34,19 +34,19 @@
 								</div>
 							</div>
 						</a>
-
-						<article style="display: none;" class="item thumb" data-width="384">
+						
+						<article class="item thumb" data-width="340">
 							<span><a class="popup-youtube" data-effect="mfp-zoom-in" href="https://www.youtube.com/watch?v=FEvR7A2y2Aw"><img src="images/thumbs/vid/plane.jpg" alt=""></a></span>
 						</article>
 						
-						<article style="display: none;" class="item thumb" data-width="348">
+						<article class="item thumb" data-width="348">
 							<span><a class="popup-youtube" data-effect="mfp-zoom-in" href="https://www.youtube.com/watch?v=4DWDSwqe0VY"><img src="images/thumbs/vid/salad.jpg" alt=""></a></span>
 						</article>
 						
-						<article style="display: none;" class="item thumb" data-width="282">
+						<article class="item thumb" data-width="282">
 							<span><a class="popup-youtube" data-effect="mfp-zoom-in" href="https://www.youtube.com/watch?v=uoF0WLDjJHQ"><img src="images/thumbs/vid/italy.jpg" alt=""></a></span>
 						</article>
-						
+									
 						<article class="item thumb" data-width="274">
 							<span class="popup-img"><a data-effect="mfp-zoom-in" href="images/fulls/it-columns.jpg"><img src="images/thumbs/it-columns.jpg" alt=""></a></span>
 						</article>
@@ -55,7 +55,7 @@
 							<span class="popup-img"><a data-effect="mfp-zoom-in" href="images/fulls/france-light.jpg"><img src="images/thumbs/france-light.jpg" alt=""></a></span>
 						</article>
 
-						<article class="item thumb" data-width="476">
+						<article class="item thumb" data-width="350">
 							<span class="popup-img"><a data-effect="mfp-zoom-in" href="images/fulls/it-locks.jpg"><img src="images/thumbs/it-locks.jpg" alt=""></a></span>
 						</article>
 						
@@ -63,23 +63,23 @@
 							<span class="popup-img"><a data-effect="mfp-zoom-in" href="images/fulls/granada-old.jpg"><img src="images/thumbs/granada-old.jpg" alt=""></a></span>
 						</article>
 						
+						<article class="item thumb" data-width="274">
+							<span class="popup-img"><a data-effect="mfp-zoom-in" href="images/fulls/lisbon-hostel.jpg"><img src="images/thumbs/lisbon-hostel.jpg" alt=""></a></span>
+						</article>
+						
+						<!-- <article class="item thumb" data-width="232">
+							<span class="popup-img"><a data-effect="mfp-zoom-in" href="images/fulls/granada-cat.jpg"><img src="images/thumbs/granada-cat.jpg" alt=""></a></span>
+						</article> -->
+						
 						<article class="item thumb" data-width="384">
 							<span class="popup-img"><a data-effect="mfp-zoom-in" href="images/fulls/it-cinque-insta.jpg"><img src="images/thumbs/it-cinque-insta.jpg" alt=""></a></span>
-						</article>
-						
-						<article class="item thumb" data-width="232">
-							<span class="popup-img"><a data-effect="mfp-zoom-in" href="images/fulls/granada-cat.jpg"><img src="images/thumbs/granada-cat.jpg" alt=""></a></span>
-						</article>
-						
-						<article class="item thumb" data-width="348">
-							<span class="popup-img"><a data-effect="mfp-zoom-in" href="images/fulls/lisbon-hostel.jpg"><img src="images/thumbs/lisbon-hostel.jpg" alt=""></a></span>
 						</article>
 						
 						<article class="item thumb" data-width="500">
 							<span class="popup-img"><a data-effect="mfp-zoom-in" href="images/fulls/barcelona-flowers.jpg"><img src="images/thumbs/barcelona-flowers.jpg" alt=""></a></span>
 						</article>	
 						
-						<article class="item thumb" data-width="282">
+						<article class="item thumb" data-width="320">
 							<span class="popup-img"><a data-effect="mfp-zoom-in" href="images/fulls/mallorca-david.jpg"><img src="images/thumbs/mallorca-david.jpg" alt=""></a></span>
 						</article>
 						
@@ -103,13 +103,13 @@
 							<span class="popup-img"><a data-effect="mfp-zoom-in" href="images/fulls/it-pink.jpg"><img src="images/thumbs/it-pink.jpg" alt=""></a></span>
 						</article>
 						
-					</div>
 				</div>
+			</div>
 
 			<div id="footer">
 				<div class="left">
 					<p>
-						<a class="toggle-media" style="cursor: pointer;"><br />Show videos</a>
+						<!-- <a class="media-toggle" style="cursor: pointer;"><br />Show videos</a> -->
 						<a class="map" href="https://www.google.com/maps/d/embed?mid=1NJ6iD4dGM3vZZE7BhI6SArL4svo"><br />Open map</a>
 					</p>
 				</div>
@@ -136,9 +136,20 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 
-			<script>
+			<!-- <script>
+				const media = document.querySelectorAll('.thumb');
+				console.log(media);
+				
 
-			</script>
+				const toggleMedia = () => {
+					document.querySelectorAll('.thumb').forEach(item => {
+						item.classList.toggle('hidden');
+					});
+				}
+
+				document.querySelector('.media-toggle').addEventListener('click', toggleMedia);
+
+			</script> -->
 
 	</body>
 </html>
